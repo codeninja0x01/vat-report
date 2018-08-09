@@ -15,6 +15,9 @@ class CreateLostCertificatesTable extends Migration
     {
         Schema::create('lost_certificates', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('place_reason');
+            $table->integer('times_certificate_lost');
+            
             $table->timestamps();
         });
     }

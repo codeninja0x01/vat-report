@@ -20,5 +20,9 @@ class TaxPayer extends Model
         return $this->hasOne('App\Commitment');
     }
 
+    public function lostCertificates(){
+        return $this->hasMany('App\LostCertificates');
+    }
+
 
 }
