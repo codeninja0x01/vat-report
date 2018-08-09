@@ -24,10 +24,10 @@ class CreateRegistrationDeptTable extends Migration
             $table->string('common_revenue');
             $table->string('approved_by');
             $table->string('entered_by');
-            // $table->integer('commitment_id');
+            $table->integer('commitment_id');
 
 
-            // $table->foreign('commitment_id')->references('id')->on('commitments');
+            $table->foreign('commitment_id')->references('id')->on('commitments');
             $table->timestamps();
         });
     }
