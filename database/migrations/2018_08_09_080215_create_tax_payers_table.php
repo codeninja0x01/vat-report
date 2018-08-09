@@ -17,22 +17,23 @@ class CreateTaxPayersTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('tin');
+            $table->integer('tin');
             $table->string('trade_name');
             $table->double('service_income');
             $table->string('commencemement_of_bussiness');
             $table->string('business_activities');
             $table->integer('business_leg_status_id')->unsigned();
             $table->integer('registration_no')->unsigned();
-
+            $table->integer('commitment_id')->unsigned();
             $table->timestamps();
         });
 
-        Schema::table('tax_payers',function($table){
-            $table->foreign('business_leg_status_id')
-            ->references('id')->on('business_legal_status');
-            $table->foreign('registration_no')->references('vat_reg_no')->on('registration_dept');
-        });
+        // Schema::table('tax_payers',function($table){
+        //     $table->foreign('business_leg_status_id')
+        //     ->references('id')->on('business_legal_status');
+        //     $table->foreign('registration_no')->references('vat_reg_no')->on('registration_dept');
+        //     $table->foreign('commitment_id')->references('id')->on('commitments');
+        // });
     }
 
     /**

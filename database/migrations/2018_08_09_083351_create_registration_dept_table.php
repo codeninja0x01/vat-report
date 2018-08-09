@@ -27,7 +27,7 @@ class CreateRegistrationDeptTable extends Migration
             $table->integer('commitment_id');
 
 
-            $table->foreign('commitment_id')->references('id')->on('commitments');
+            // $table->foreign('commitment_id')->references('id')->on('commitments');
             $table->timestamps();
         });
     }
